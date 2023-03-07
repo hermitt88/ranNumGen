@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Generator</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+    <py-script>
+    import random
+    def reRoll():
+      startNum = int(js.document.getElementById("startNum").value)
+      endNum = int(js.document.getElementById("endNum").value)
+      separator = js.document.getElementById("sep").value
+      a = list(range(startNum, endNum + 1))
+      random.shuffle(a)
+      b = separator.join(map(str, a))
+      display(b, target="numbers", append=False)
+    reRoll()
+
+    </py-script>
+    <div>
+      <div id="numbers"></div>
+      <hr>
+      <div>
+        <span>start number: </span>
+        <input type="number" id="startNum" value="1">
+        <span>end number: </span>
+        <input type="number" id="endNum" value="100">
+      </div>
+      <div>
+        <span>separator: </span>
+        <input type="text" id="sep" value=", ">
+        <button id="reroll_nums" class="py-button" type="button" py-onclick="reRoll()">reroll</button>
+        
+      </div>
+    </div>
+  </body>
+</html>
