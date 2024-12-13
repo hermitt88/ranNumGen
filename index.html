@@ -8,7 +8,7 @@
     <title>🦜 PyScript Random Generator</title>
   </head>
   <body>
-    <py-script>
+    <script type="py">
     import random
     def reRoll():
       startNum = int(js.document.getElementById("startNum").value)
@@ -20,7 +20,7 @@
       display(b, target="numbers", append=False)
     reRoll()
 
-    </py-script>
+    </script>
     <div>
       <div id="numbers"></div>
       <hr>
